@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "title": "Next.js example",
+  "description": "A minimal example using Sanity for Content and Next.js as frontend, deployed to Vercel.",
+  "previewMedia": {
+    "type": "image",
+    "src": ".sanity-template/screenshot.png",
+    "alt": "Screenshot of the Next.js frontend"
+  },
+  "technologies": [
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "url": "https://vercel.com/"
+    }
+  ],
+  "deployment": {
+    "provider": "vercel",
+    "studio": {
+      "basePath": "/studio"
+    },
+    "deployHook": {
+      "name": "Production deployment hook",
+      "envVars": ["SANITY_STUDIO_BUILD_HOOK"]
+    },
+    "tokens": [
+      {
+        "label": "Example write token",
+        "role": "write",
+        "envVar": "SANITY_WRITE_TOKEN"
+      }
+    ],
+    "envVars": {
+      "projectId": ["NEXT_PUBLIC_SANITY_PROJECT_ID"],
+      "dataset": ["NEXT_PUBLIC_SANITY_DATASET"]
+    },
+    "corsOrigins": [
+      {
+        "origin": "http://localhost:3000",
+        "allowCredentials": true
+      }
+    ]
+  }
+}
