@@ -5,8 +5,8 @@
     "basePath": "/studio"
   },
   "api": {
-    "projectId": "PLACEHOLDER-SEE-README",
-    "dataset": "PLACEHOLDER-SEE-README"
+    "projectId": "arnkyoxp",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
