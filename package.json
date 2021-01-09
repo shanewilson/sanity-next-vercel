@@ -5,7 +5,7 @@
   "description": "A bare bones example of a Vercel-deployable project with a Next.js frontend and a Sanity Studio on /studio",
   "scripts": {
     "dev": "concurrently \"cd studio && sanity start\" \"next\"",
-    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity build ../public/studio -y && cd .. && next build",
+    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity build ../public/studio -y && cd .. && bsb -make-world && next build",
     "start": "vercel dev",
     "postinstall": "cd studio && yarn"
   },
