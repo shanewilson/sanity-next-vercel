@@ -8,11 +8,11 @@ yarn-error.log
 .vercel
 .next
 
-public/studio
-studio/dist
+/public/studio
+/studio/dist
 
 .bsb.lock
 .merlin
-lib/
+/lib
 
 src/**/**.js
