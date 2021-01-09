@@ -13,7 +13,6 @@
   "author": "Sanity.io <hello@sanity.io>",
   "license": "MIT",
   "dependencies": {
-    "@sanity/cli": "^2.0.9",
     "@sanity/client": "^2.0.9",
     "gentype": "^3.41.0",
     "next": "^10.0.1",
@@ -22,11 +21,16 @@
     "reason-react": "^0.9.1"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.0.9",
     "autoprefixer": "^10.1.0",
     "bs-platform": "^8.4.2",
     "concurrently": "^5.3.0",
     "cssnano": "^4.1.10",
     "postcss": "^8.2.1",
     "tailwindcss": "^2.0.2"
+  },
+  "volta": {
+    "node": "12.18.1",
+    "yarn": "1.22.5"
   }
 }

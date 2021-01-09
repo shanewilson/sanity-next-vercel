@@ -1,9 +1,8 @@
 {
-  "name": "sanity-template-vercel-poc-studio",
+  "name": "sanity-next-vercel-studio",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "package.json",
-  "author": "Sanity <hello@sanity.io>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -24,5 +23,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "volta": {
+    "extends": "../package.json"
+  }
 }
