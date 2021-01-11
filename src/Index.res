@@ -2,7 +2,8 @@ module Head = Next.Head
 
 type greeting = {
     title: string,
-    text: string
+    text: string,
+    content: string
 }
 
 type props = {
@@ -17,6 +18,7 @@ let default = (props) => {
       </Head>
 
       <main>
+        <PortableText blocks={props.greeting.content} />
         <h1 >{React.string(props.greeting.title)}</h1>
         <Button>{React.string("beep")}</Button>
         <p >{React.string(props.greeting.text)}</p>
@@ -59,7 +61,7 @@ let default = (props) => {
 }
 
 let getStaticProps = _ctx => {
-  let greeting = SanityCMS.client.fetch(. "*[_id == 'welcome'][0]")
+  let greeting = SanityCMS.sanityClient.fetch(. "*[_id == 'welcome'][0]")
   greeting->Js.Promise.then_(value => {
   Js.Promise.resolve({
     "props": {
