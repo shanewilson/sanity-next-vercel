@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { urlFor } from "../utils/sanity";
 
-function ProductCard({ _id, title, mainImage, slug, defaultProductVariant }) {
+function ProductCard({ title, mainImage, slug, defaultProductVariant }) {
   return (
     <Link href={`/products/${slug.current}`}>
       <a className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">

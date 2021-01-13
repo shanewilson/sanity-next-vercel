@@ -20,7 +20,7 @@ function ProductsPageContainer({ productsData, preview }) {
   return <ProductsPage products={products} />;
 }
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const productsData = await getClient(preview).fetch(query);
 
   return {
