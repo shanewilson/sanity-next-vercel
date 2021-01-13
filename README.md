@@ -1,28 +1,45 @@
-# Sanity example Vercel POC
+# Sanity.io and Next.js Ecommerce Starter
 
-> A bare bones example of a Vercel-deployable project with a Next.js frontend and a Sanity Studio on /studio
+This is an e-commerce *starter* that features a studio with a simple Next.js frontend.
 
-Created from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-vercel-poc).
+This starter uses the [Next.js toolkit for Sanity.io](https://github.com/sanity-io/next-sanity).
 
-## What you have
+Note: This starter is an example of e-commerce content models and layout. It doesn't come with a full cart and fulfilmment solution. If you're interested in how to integrate Sanity with a e-commerce solution, do [join our community](https://slack.sanity.io).
 
-- Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Vercel](https://vercel.sh)
+**Features:**
 
-## Quick start
+* Live previews, including website preview for products
+* Frontend with product pages styled using Tailwind.css
+* Content types for products, ads, pages, routes, popup shops, social media
 
-1. Follow instructions on [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-vercel-poc).
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-4. `npm run build` to build to production locally
+This starter comes with an intentionally sparse frontend for just products and super simple landing pages. The fun is building and tweaking it yourself?
 
-## Deploy changes
+## Getting started
 
-Vercel automatically deploys new changes committed to master on GitHub.
+The quickest way to get up and running is to go to https://www.sanity.io/create?template=sanity-io%2Fsanity-template-nextjs-ecommerce and create a new project by following the instructions there.
 
-## Stuck? Get help
+## Enabling live preview
 
-[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
+You can append `?preview` to the landing pages, product pages and the products overview to enable preview mode when you are logged into your Sanity project. For example:
 
-Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+`https://<your-project>.vercel.app/products/roji?preview`
+
+You can find the code for the in-studio preview over in `/studio/src/components/product`.
+
+## Running Locally
+
+To run locally, rename `.env.test` to `.env` and add your project ID from [manage.sanity.io](https://manage.sanity.io).
+
+If you have already set up deployments on Vercel, you can also do `vercel env pull` to copy environment variables to your development environment.
+
+NOTE: If your Vercel project is set up to use the Next.js framework preset, you'll have to go to the project settings under https://vercel.com and under Build & Develpment change the _development command_ to: `npm run dev`
+
+To start the development server:
+```bash
+npm start
+```
+This will run the frontend at http://localhost:3000 and the Sanity Studio at http://localhost:3000/studio
+
+## Credits
+
+The e-commerce frontend is built with Tailwind components by [khatabwedaa](https://tailwindcomponents.com/u/khatabwedaa).
