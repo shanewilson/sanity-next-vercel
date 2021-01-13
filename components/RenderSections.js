@@ -4,7 +4,6 @@ import { upperFirst } from "lodash";
 import * as SectionComponents from "./sections";
 
 function resolveSections(section) {
-  // eslint-disable-next-line import/namespace
   const Section = SectionComponents[upperFirst(section._type)];
 
   if (Section) {
