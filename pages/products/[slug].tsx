@@ -6,15 +6,15 @@ import { getClient, usePreviewSubscription } from "../../utils/sanity";
 
 const query = groq`*[_type == "product" && slug.current == $slug][0]`;
 
-function ProductPageContainer({ productData, preview }) {
+function ProductPageContainer({ initialData, preview }) {
   const router = useRouter();
-  if (!router.isFallback && !productData?.slug) {
+  if (!router.isFallback && !initialData) {
     return <Error statusCode={404} />;
   }
 
-  const { data: product = {} } = usePreviewSubscription(query, {
-    params: { slug: productData?.slug?.current },
-    initialData: productData,
+  const { data = {} } = usePreviewSubscription(query, {
+    params: { slug: initialData?.slug?.current },
+    initialData,
     enabled: preview || "preview" in router.query,
   });
 
@@ -29,7 +29,7 @@ function ProductPageContainer({ productData, preview }) {
     vendor,
     categories,
     slug,
-  } = product;
+  } = data;
   return (
     <ProductPage
       id={_id}
@@ -47,12 +47,12 @@ function ProductPageContainer({ productData, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const productData = await getClient(preview).fetch(query, {
+  const initialData = await getClient(preview).fetch(query, {
     slug: params.slug,
   });
 
   return {
-    props: { preview, productData },
+    props: { preview, initialData },
   };
 }
 

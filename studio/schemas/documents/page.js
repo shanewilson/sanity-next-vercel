@@ -15,6 +15,11 @@ export default {
       title: "Title",
     },
     {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+    },
+    {
       name: "content",
       type: "array",
       title: "Page sections",
